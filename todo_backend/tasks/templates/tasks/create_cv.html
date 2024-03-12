@@ -1,0 +1,62 @@
+<!-- cv_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ cv.full_name }}'s CV</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cv1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="avatar">
+            <img src="{{ STATIC_URL }}/Upscales.ai_1709122943157-cv.jpg" alt="Avatar">
+        </div>
+        <div class="name">
+            <h1>{{ cv.full_name }}</h1>
+            <div class="specialize">{{ cv.job_title }}</div>
+            <ul class="contact">
+                <li><span>P</span> {{ cv.phone_number }}</li>
+                <li><span>E</span> {{ cv.email }}</li>
+                <li><span>G</span> <a href="{{ cv.github_url }}" target="_blank">{{ cv.github_url }}</a></li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <li>From <b>{{ cv.city }}</b> - VietNam</li>
+                <li>{{ cv.birth_date|date:"d/m/Y" }}</li>
+                <li>{{ cv.university }}</li>
+            </ul>
+        </div>
+        <div class="intro">
+            <h2>INTRODUCE MYSELF</h2>
+            <p>{{ cv.introduction }}</p>
+        </div>
+        <div class="experience">
+            <h2>SKILLS</h2>
+            <p>{{ cv.skillset }}</p>
+        </div>
+        <div class="achievements">
+            <h2>REWARDS</h2>
+            <p>{{ cv.rewards }}</p>
+        </div>
+        <div class="projects">
+            <h2>PROJECTS</h2>
+            <p>{{ cv.projects }}</p>
+        </div>
+        <div class="results">
+            <h2>RESULTS</h2>
+            <p>{{ cv.results }}</p>
+        </div>
+    </div>
+</body>
+</html>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>

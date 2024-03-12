@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List 2</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todo2.css' %}">
+    <script src="{% static 'todo2.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hôm Nay Bạn Sẽ Làm Gì</h1>
+        <div class="add-task">
+            <form action="{% url 'add_task' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="title" id="taskInput" placeholder="Thêm việc cần làm...">
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <div class="task-list">
+            {% for task in tasks %}
+            <div class="task">
+                <div class="task-text {% if task.completed %}completed{% endif %}">{{ task.title }}</div>
+                <div class="task-actions">
+                    <form action="{% url 'delete_task' task.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                    <form action="{% url 'toggle_task' task.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Complete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
