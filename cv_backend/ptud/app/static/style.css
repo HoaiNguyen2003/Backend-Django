@@ -18,7 +18,7 @@
 }
 .profile .jobster-user-info .profile-avatar i {
     font-size: 16px;
-    color: #21c87a;
+    color: #c82721;
     position: absolute;
     background: #ffffff;
     border-radius: 100%;
@@ -106,7 +106,7 @@
 }
 .progress .progress-bar {
     height: 3px;
-    background: #21c87a;
+    background: #a4a7e4;
 }
 .progress .progress-bar-title {
     position: absolute;
@@ -178,7 +178,7 @@
     padding: 5px 0 0 70px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info h6 {
-    color: #21c87a;
+    color: #c82156;
     margin: 5px 0 0px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info span {
@@ -216,7 +216,7 @@ li{
 }
 
 .home-link {
-    color: #A33821; /* Màu chữ */
+    color: #21a34c; /* Màu chữ */
     background-color: #4a2ac8; /* Màu nền */
     padding: 5px 10px; /* Điều chỉnh padding cho đẹp */
     border-radius: 5px; /* Điều chỉnh góc cong */
