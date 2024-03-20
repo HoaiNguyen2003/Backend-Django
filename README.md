@@ -5,7 +5,7 @@ Dạ thầy clone về xong, sẽ có 1 folder là Backend-Django
   + sao đó chạy mã : python manage.py runserver
   + nhập các công việc cần làm là ok
 - Đối với cv cũng tương tự vậy :
-  + cd cv_backend --> cd ptud
+  + cd cv_backend --> cd cv
   + sao đó chạy mã : python manage.py runserver
   + truy cập tới url http://127.0.0.1:8000/ và thêm create/, để cv
   + điền các thông tin và chọn ảnh avatar cv
